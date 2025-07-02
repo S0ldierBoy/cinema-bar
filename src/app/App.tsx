@@ -1,8 +1,9 @@
 //import {useState} from 'react'
-
+//import { useSearchMoviesQuery } from '../api/moviesApi.ts';
 
 function App() {
-    return (<div>Основная страница 12</div>)
+  return (<div>HMR раfботает!</div>);
+
 }
 
-export default App
+export default App;
