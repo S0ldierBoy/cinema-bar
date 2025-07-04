@@ -5,15 +5,15 @@ export const moviesApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.kinopoisk.dev/v1.4/',
     prepareHeaders: (headers) => {
-      headers.set('X-API-KEY', 'NTT18EY-JWYMFE5-K65YMCP-5ND3NRT');
+      headers.set('X-API-KEY', import.meta.env.VITE_KINOPOISK_API_KEY);
       return headers;
     },
   }),
   endpoints: (builder) => ({
-    searchMovies: builder.query<any, { movName: string }>({
-      query: ({ movName }) => ({
-        url: 'movie',
-        params: { search: movName },
+    searchMovies: builder.query<any, { query: string }>({
+      query: ({ query }) => ({
+        url: 'movie/search',
+        params: { page: 2, limit: 10, query: query },
       }),
     }),
   }),
