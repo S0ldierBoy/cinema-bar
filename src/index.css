@@ -3,18 +3,76 @@
 @tailwind base;
 @tailwind utilities;
 
-/*:root {*/
-/*    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
-/*    line-height: 1.5;*/
-/*    font-weight: 400;*/
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/*    color-scheme: light dark;*/
-/*    color: rgba(255, 255, 255, 0.87);*/
-/*    background-color: #242424;*/
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-/*    font-synthesis: none;*/
-/*    text-rendering: optimizeLegibility;*/
-/*    -webkit-font-smoothing: antialiased;*/
-/*    -moz-osx-font-smoothing: grayscale;*/
-/*}*/
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #000000;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card-container {
+
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+    margin-bottom: 25px;
+
+    background-color: #1f1f1f;
+    border: 1px solid #343434;
+    border-radius: 20px;
+}
+
+img {
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid #000000;
+    border-radius: 20px
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+   // border: 1px solid #1100ff;
+    align-items: flex-start;
+}
+
+.movie-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.movie-card-btn {
+    width: 30%;
+    height: 40px;
+    margin: 10px;
+
+    border: 1px solid white;
+    border-radius: 7px
+}
+
+.movie-card-btn:active {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
 

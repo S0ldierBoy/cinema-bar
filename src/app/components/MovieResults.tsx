@@ -1,22 +1,37 @@
 import { useSearchMoviesQuery } from '../../api/moviesApi.ts';
+import MovieCard from './MovieCard.tsx';
 
 const MovieResults = ({ searchTerm }) => {
 
-  const { data } = useSearchMoviesQuery({ query: searchTerm }, { skip: !searchTerm });
+  const { data, isLoading, error } = useSearchMoviesQuery(
+    { query: searchTerm },
+    { skip: !searchTerm },
+  );
+
+  if (!searchTerm) return null;
+  if (data?.docs?.length === 0) return (<p>Нет результатов</p>);
+  if (isLoading) return (<p>Загрузка...</p>);
+  if (error) return (<p>Ошибка</p>);
+
+  console.log(data.docs);
 
   return (
     <div>
-      <h1>Результаты поиска</h1>
-      <div>
-        {data?.docs?.length > 0
-          ? data.docs.map(({ id, name }) => (
-            <p key={id}>name is: {name}</p>
-          ))
-          : <p>Нет результатов</p>
-        }
+      <h1>Результат поиска</h1>
+      <div className="card-container">
+        {data.docs.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            name={movie.name || movie.alternativeName}
+            year={movie.year}
+            poster={movie.poster.previewUrl || movie.poster.url}
+            rating={movie.rating.imdb || 0}
+          />
+        ))}
       </div>
     </div>
   );
+
 
 };
 
