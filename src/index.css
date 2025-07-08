@@ -33,32 +33,32 @@
 .movie-card {
     display: flex;
     flex-direction: column;
-    padding: 7px;
+    padding: 10px;
     margin-bottom: 25px;
 
     background-color: #1f1f1f;
-    border: 1px solid #343434;
-    border-radius: 20px;
+    border: 3px solid #000000;
+    border-radius: 10px;
 }
 
 img {
     height: 550px;
     width: 100%;
     object-fit: cover;
-    border: 1px solid #000000;
-    border-radius: 20px
+    border-radius: 10px;
 }
 
 .movie-info {
     display: flex;
     flex-direction: column;
-   // border: 1px solid #1100ff;
     align-items: flex-start;
+    margin: 5px;
 }
 
 .movie-buttons {
     display: flex;
     justify-content: space-around;
+    border-top: 1px solid #2f2f2f;
 }
 
 .movie-card-btn {
@@ -66,13 +66,21 @@ img {
     height: 40px;
     margin: 10px;
 
-    border: 1px solid white;
-    border-radius: 7px
+    border-radius: 7px;
+    box-shadow: 0 10px 10px rgba(121, 121, 121, 0.3);
+
+
 }
 
 .movie-card-btn:active {
-    background-color: white;
+    background-color: #606060;
     border-color: black;
     color: black;
 }
 
+.movie-info-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
