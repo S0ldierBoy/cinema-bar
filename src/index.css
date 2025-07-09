@@ -26,12 +26,25 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+
+body {
+    width: 1000px; /* или твоя ширина */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #030303;
+
+    border: 1px solid red;
 }
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 равные колонки */
+    max-width: 1000px; /* ограничение по ширине */
+    margin: 0 auto;
+    gap: 5px;
+}
+
 
 .movie-card {
     display: flex;
@@ -39,10 +52,9 @@
     padding: 10px;
     margin-bottom: 20px;
 
-    max-width: 450px;
+    max-width: 320px;
     max-height: 750px;
     width: 95%;
-
 
     background-color: #101010;
     border-radius: 10px;
@@ -50,8 +62,8 @@
 }
 
 img {
-    height: 550px;
-    width: 100%;
+    height: 450px;
+    width: 300px;
 
     object-fit: fill;
     border-radius: 10px;
@@ -99,7 +111,6 @@ span {
     overflow: hidden;
     text-overflow: ellipsis
 }
-
 
 
 form {

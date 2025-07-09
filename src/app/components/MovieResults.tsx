@@ -13,7 +13,7 @@ const MovieResults = ({ searchTerm }) => {
   if (isLoading) return (<p>Загрузка...</p>);
   if (error) return (<p>Ошибка</p>);
 
-  console.log(data.docs)
+  console.log(data.docs);
 
   return (
     <div>
