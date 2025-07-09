@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Search } from 'lucide-react';
 
 const MovieSearchInput = ({ onSearch }) => {
   const [movName, setMovName] = useState('');
@@ -11,21 +12,19 @@ const MovieSearchInput = ({ onSearch }) => {
   };
 
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-4">Введите название фильма:</h1>
-      <form onSubmit={handleSubmit} className="flex gap-2 items-center">
+
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={movName}
           onChange={(e) => setMovName(e.target.value)}
-          placeholder="Название фильма"
-          className="border px-3 py-2 rounded w-full"
+          placeholder="  Введите название фильма"
         />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-          Поиск
+        <button type="submit" className="form-btn">
+          <Search size={'16px'} color={'red'} />
         </button>
       </form>
-    </div>
+
   );
 
 };

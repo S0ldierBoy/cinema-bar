@@ -13,9 +13,10 @@ const MovieResults = ({ searchTerm }) => {
   if (isLoading) return (<p>Загрузка...</p>);
   if (error) return (<p>Ошибка</p>);
 
+  console.log(data.docs)
+
   return (
     <div>
-      <h1>Результат поиска</h1>
       <div className="card-container">
         {data.docs.map((movie) => (
           <MovieCard

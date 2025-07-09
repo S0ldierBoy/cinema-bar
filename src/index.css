@@ -27,24 +27,33 @@
 }
 
 .card-container {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .movie-card {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
-    background-color: #1f1f1f;
-    border: 3px solid #000000;
+    max-width: 450px;
+    max-height: 750px;
+    width: 95%;
+
+
+    background-color: #101010;
     border-radius: 10px;
+    border: 1px solid rgba(121, 121, 121, 0.3);
 }
 
 img {
     height: 550px;
     width: 100%;
-    object-fit: cover;
+
+    object-fit: fill;
     border-radius: 10px;
 }
 
@@ -52,7 +61,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 5px;
+    margin: 10px 5px;
 }
 
 .movie-buttons {
@@ -63,19 +72,17 @@ img {
 
 .movie-card-btn {
     width: 30%;
-    height: 40px;
-    margin: 10px;
+    height: 35px;
+    margin: 10px 0;
 
     border-radius: 7px;
-    box-shadow: 0 10px 10px rgba(121, 121, 121, 0.3);
-
-
+    box-shadow: 0 3px 3px rgba(121, 121, 121, 0.3);
 }
 
 .movie-card-btn:active {
-    background-color: #606060;
+    background-color: rgba(121, 121, 121, 0.3);
     border-color: black;
-    color: black;
+    color: white;
 }
 
 .movie-info-line {
@@ -83,4 +90,41 @@ img {
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
+
+span {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+
+
+form {
+    display: flex;
+    margin: 10px;
+    border: 1px solid #363636;
+    border-radius: 5px;
+    width: 95%;
+}
+
+input {
+    width: 90%;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 10%;
+
+    border: 1px solid #363636;
+    border-radius: 5px;
+}
+
+
+
+

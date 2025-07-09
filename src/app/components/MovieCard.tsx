@@ -7,7 +7,7 @@ const MovieCard =
         <img src={poster} alt={name} className="movie-poster" />
         <div className="movie-info">
           <p className="movie-info-line">
-            <FolderPen size={16} color={'red'} />{name}
+            <FolderPen size={16} color={'red'} /><span>{name}</span>
           </p>
           <p className="movie-info-line">
             <CalendarClock size={16} color={'red'} />{year}
@@ -18,7 +18,7 @@ const MovieCard =
         </div>
         <div className="movie-buttons">
           <button className="movie-card-btn">Подробнее</button>
-          <button className="movie-card-btn">В избранное</button>
+          <button className="movie-card-btn">Сохранить</button>
         </div>
       </div>
 

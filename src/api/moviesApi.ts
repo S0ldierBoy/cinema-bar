@@ -13,7 +13,7 @@ export const moviesApi = createApi({
     searchMovies: builder.query<any, { query: string }>({
       query: ({ query }) => ({
         url: 'movie/search',
-        params: { page: 1, limit: 3, query: query },
+        params: { page: 1, limit: 15, query: query },
       }),
     }),
   }),
