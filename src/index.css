@@ -27,22 +27,23 @@
 }
 
 
-body {
-    width: 1000px; /* или твоя ширина */
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #030303;
-
-    border: 1px solid red;
+    background-color: #181818;
+    border: 1px solid #000000;
 }
 
 
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 равные колонки */
-    max-width: 1000px; /* ограничение по ширине */
+    max-width: 980px; /* ограничение по ширине */
     margin: 0 auto;
-    gap: 5px;
+    gap: 10px;
 }
 
 
@@ -54,7 +55,7 @@ body {
 
     max-width: 320px;
     max-height: 750px;
-    width: 95%;
+    width: 100%;
 
     background-color: #101010;
     border-radius: 10px;
@@ -62,12 +63,14 @@ body {
 }
 
 img {
+    display: flex;
     height: 450px;
     width: 300px;
 
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 10px;
 }
+
 
 .movie-info {
     display: flex;
@@ -115,27 +118,91 @@ span {
 
 form {
     display: flex;
-    margin: 10px;
-    border: 1px solid #363636;
-    border-radius: 5px;
-    width: 95%;
+    padding: 10px;
+    width: 100%;
+
+    margin-bottom: 20px;
+
+
 }
 
 input {
-    width: 90%;
+    width: 95%;
+    border-bottom: 1px solid #363636;
+}
+
+input :hover {
+    color: red;
 }
 
 .form-btn {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: auto;
-    width: 10%;
+    width: 5%;
 
-    border: 1px solid #363636;
+    border-left: 1px solid #363636;
+    border-bottom: 1px solid #363636;
     border-radius: 5px;
 }
 
+header {
+    background: #181818;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 5px;
+}
 
+/* Ограничение ширины и центрирование */
+.container-header-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    max-width: 1000px;
+    min-height: 64px;
+    margin: 0 auto;
+    padding: 0 10px;
+    gap: 24px;
+}
+
+/* Левая часть — логотип */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-title {
+    font-size: 1.6em;
+
+}
+
+/* Правая часть — кнопка */
+.header-actions {
+    justify-self: end; /* Кнопка всегда справа в гриде */
+}
+
+/* Кнопка */
+.header-btn {
+    cursor: pointer;              /* Курсор-рука при наведении */
+    transition: opacity 0.2s;     /* Плавное изменение прозрачности при наведении */
+    opacity: 0.7;                 /* По умолчанию чуть прозрачнее */
+}
+
+.header-btn:hover {
+    opacity: 1;
+}
+
+
+@media (max-width: 600px) {
+    .container-header-content {
+        padding: 0 10px;
+        min-height: 48px;
+        gap: 8px;
+    }
+    .header-title {
+        font-size: 1.1rem;
+    }
+}
 
 

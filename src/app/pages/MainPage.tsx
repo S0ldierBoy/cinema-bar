@@ -6,10 +6,15 @@ const MainPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <div>
-      <MovieSearchInput onSearch={setSearchTerm} />
-      <MovieResult searchTerm={searchTerm} />
-    </div>);
+    <>
+      <section>
+        <MovieSearchInput onSearch={setSearchTerm} />
+      </section>
+      <section>
+        <MovieResult searchTerm={searchTerm} />
+      </section>
+    </>
+  );
 };
 
 export default MainPage;

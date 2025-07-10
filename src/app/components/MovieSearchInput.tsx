@@ -12,7 +12,6 @@ const MovieSearchInput = ({ onSearch }) => {
   };
 
   return (
-
       <form onSubmit={handleSubmit}>
         <input
           type="text"

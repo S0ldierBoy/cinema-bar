@@ -13,25 +13,22 @@ const MovieResults = ({ searchTerm }) => {
   if (isLoading) return (<p>Загрузка...</p>);
   if (error) return (<p>Ошибка</p>);
 
-  console.log(data.docs);
+  console.log(data);
 
   return (
-    <div>
-      <div className="card-container">
-        {data.docs.map((movie) => (
+    <ul className="card-container">
+      {data.docs.map((movie) => (
+        <li key={movie.id}>
           <MovieCard
-            key={movie.id}
             name={movie.name || movie.alternativeName}
             year={movie.year}
             poster={movie.poster.previewUrl || movie.poster.url}
             rating={movie.rating.imdb || 0}
           />
-        ))}
-      </div>
-    </div>
+        </li>
+      ))}
+    </ul>
   );
-
-
 };
 
 export default MovieResults;
