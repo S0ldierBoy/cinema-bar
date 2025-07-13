@@ -19,6 +19,8 @@
     font-weight: 400;
 }
 
+
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -83,6 +85,8 @@ header {
     gap: 10px;
     max-width: 1000px;
     margin: 0 auto;
+
+    padding-bottom: 120px;
 }
 
 .movie-card {
@@ -96,7 +100,6 @@ header {
 }
 
 img {
-//max-height: 450px;
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
@@ -105,6 +108,30 @@ img {
 .movie-info {
     margin: 10px 5px;
 }
+
+.movie-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.movie-info-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+
+span {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
 
 .movie-buttons {
     border-top: 1px solid #2f2f2f;
@@ -128,29 +155,6 @@ img {
 
 .movie-card-btn:hover {
     background-color: rgba(121, 121, 121, 0.3);
-}
-
-.movie-info-line {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-
-}
-
-.movie-title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-}
-
-span {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
 }
 
 
