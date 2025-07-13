@@ -22,7 +22,7 @@ const MovieResults = ({ searchTerm }) => {
           <MovieCard
             name={movie.name || movie.alternativeName}
             year={movie.year}
-            poster={movie.poster.previewUrl || movie.poster.url}
+            poster={movie.poster.url}
             rating={movie.rating.imdb || 0}
           />
         </li>

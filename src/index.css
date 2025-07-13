@@ -13,94 +13,109 @@
 
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.87);
     line-height: 1.5;
     font-weight: 400;
-
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #000000;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
-
 
 .main-container {
     display: flex;
     flex-direction: column;
     max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #181818;
-    border: 1px solid #000000;
+    margin: 70px auto 0 auto;
+    background: #181818;
+    border: 1px solid #000;
+}
 
-    margin-top: 70px;
+header {
+    background: #181818;
+    border-bottom: 1px solid #000000;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    height: 64px;
+    top: 0;
+}
 
 
+/* Ограничение ширины и центрирование */
+.container-header-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    max-width: 1000px;
+    min-height: 64px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Левая часть — логотип */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-title {
+    font-size: 1.6em;
+}
+
+.header-actions {
+    justify-self: end;
+}
+
+.header-btn {
+    cursor: pointer;
+    transition: opacity 0.2s;
+    opacity: 0.7;
+}
+
+.header-btn:hover {
+    opacity: 1;
 }
 
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 равные колонки */
-    max-width: 980px; /* ограничение по ширине */
-    margin: 0 auto;
+    grid-template-columns: 1fr;
     gap: 10px;
-
-
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-
 .movie-card {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-bottom: 20px;
-
-    max-width: 320px;
-    max-height: 750px;
+    max-width: 380px;
     width: 100%;
-
-    background-color: #101010;
+    background: #101010;
     border-radius: 10px;
     border: 1px solid rgba(121, 121, 121, 0.3);
+    margin: 0 auto 20px;
+    padding: 10px;
 }
 
 img {
-    display: flex;
-    height: 450px;
-    width: 300px;
-
+//max-height: 450px;
+    width: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
-
 .movie-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     margin: 10px 5px;
 }
 
-
 .movie-buttons {
-    display: flex;
-    flex-direction: column;
     border-top: 1px solid #2f2f2f;
 }
 
 .movie-card-btn {
-    display: flex;
     width: 100%;
     height: 35px;
     margin: 7px 0;
 
-    justify-content: center;
-    align-items: center;
-
+    text-align: center;
     cursor: pointer;
 
     border-radius: 7px;
@@ -109,8 +124,10 @@ img {
 
 .movie-card-btn:active {
     background-color: rgba(121, 121, 121, 0.3);
-    border-color: black;
-    color: white;
+}
+
+.movie-card-btn:hover {
+    background-color: rgba(121, 121, 121, 0.3);
 }
 
 .movie-info-line {
@@ -118,7 +135,7 @@ img {
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
-    width: 100%;
+
 }
 
 .movie-title {
@@ -166,76 +183,37 @@ input :hover {
     cursor: pointer;
 }
 
-header {
-    background: #181818;
-    border-bottom: 1px solid #000000;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    height: 64px; /* добавь! */
-    min-height: 64px; /* опционально, но height достаточно */
-    top: 0;
-    left: 0;
-}
+
+/*@media (max-width: 600px) {*/
+/*    .card-container {*/
+/*        grid-template-columns: repeat(1, 1fr);*/
+/*        justify-items: center;*/
+/*    }*/
+
+/*    .movie-card {*/
+/*        width: 100%;*/
+/*        height: auto;*/
+/*        max-width: 420px;*/
+
+/*        background-color: #101010;*/
+/*        border-radius: 10px;*/
+/*        border: 1px solid rgba(121, 121, 121, 0.3);*/
+/*    }*/
+
+/*    img {*/
+/*        width: 100%;*/
+/*        object-fit: cover;*/
+/*    }*/
 
 
-/* Ограничение ширины и центрирование */
-.container-header-content {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+/*    .container-header-content {*/
+/*        padding: 0 15px;*/
+/*        gap: 8px;*/
+/*    }*/
 
-    max-width: 1000px;
-    min-height: 64px;
-    margin: 0 auto;
-    padding: 0 10px;
-    gap: 24px;
-}
-
-/* Левая часть — логотип */
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.header-title {
-    font-size: 1.6em;
-
-}
-
-/* Правая часть — кнопка */
-.header-actions {
-    justify-self: end; /* Кнопка всегда справа в гриде */
-}
-
-/* Кнопка */
-.header-btn {
-    cursor: pointer; /* Курсор-рука при наведении */
-    transition: opacity 0.2s; /* Плавное изменение прозрачности при наведении */
-    opacity: 0.7; /* По умолчанию чуть прозрачнее */
-}
-
-.header-btn:hover {
-    opacity: 1;
-}
-
-
-@media (max-width: 600px) {
-    .card-container {
-        grid-template-columns: repeat(1, 1fr); /* 3 равные колонки */
-        justify-items: center;
-        margin: auto;
-    }
-
-    .container-header-content {
-        padding: 0 10px;
-        gap: 8px;
-    }
-
-    .header-title {
-        font-size: 1.1rem;
-    }
-}
+/*    .header-title {*/
+/*        font-size: 1.1rem;*/
+/*    }*/
+/*}*/
 
 
