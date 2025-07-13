@@ -11,14 +11,14 @@
     box-sizing: border-box;
 }
 
-:root {
+
+body {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     background-color: #000;
     color: rgba(255, 255, 255, 0.87);
     line-height: 1.5;
     font-weight: 400;
 }
-
 
 
 .main-container {
@@ -86,7 +86,7 @@ header {
     max-width: 1000px;
     margin: 0 auto;
 
-    padding-bottom: 120px;
+    padding-bottom: 80px;
 }
 
 .movie-card {
@@ -157,7 +157,6 @@ span {
     background-color: rgba(121, 121, 121, 0.3);
 }
 
-
 form {
     display: flex;
     padding: 10px;
@@ -187,37 +186,11 @@ input :hover {
     cursor: pointer;
 }
 
-
-/*@media (max-width: 600px) {*/
-/*    .card-container {*/
-/*        grid-template-columns: repeat(1, 1fr);*/
-/*        justify-items: center;*/
-/*    }*/
-
-/*    .movie-card {*/
-/*        width: 100%;*/
-/*        height: auto;*/
-/*        max-width: 420px;*/
-
-/*        background-color: #101010;*/
-/*        border-radius: 10px;*/
-/*        border: 1px solid rgba(121, 121, 121, 0.3);*/
-/*    }*/
-
-/*    img {*/
-/*        width: 100%;*/
-/*        object-fit: cover;*/
-/*    }*/
-
-
-/*    .container-header-content {*/
-/*        padding: 0 15px;*/
-/*        gap: 8px;*/
-/*    }*/
-
-/*    .header-title {*/
-/*        font-size: 1.1rem;*/
-/*    }*/
-/*}*/
-
+.site-footer { /* ваш футер */
+    flex-shrink: 0; /* не даём ему сжиматься/исчезать */
+    background: #181818;
+    border-top: 1px solid #000;
+    padding: 20px 15px;
+    text-align: center;
+}
 
