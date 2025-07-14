@@ -13,8 +13,6 @@ const MovieResults = ({ searchTerm }) => {
   if (isLoading) return (<p>Загрузка...</p>);
   if (error) return (<p>Ошибка</p>);
 
-  console.log(data);
-
   return (
     <ul className="card-container">
       {data.docs.map((movie) => (

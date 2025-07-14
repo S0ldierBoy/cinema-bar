@@ -25,7 +25,6 @@ const MovieSearchInput = ({ onSearch }) => {
       </form>
 
   );
-
 };
 
 export default MovieSearchInput;
