@@ -1,5 +1,5 @@
-import Header from '../components/Header.tsx';
-import Footer from '../components/Footer.tsx';
+import Header from './Header.tsx';
+import Footer from './Footer.tsx';
 
 export const AppLayout = ({ children }) => {
   return (

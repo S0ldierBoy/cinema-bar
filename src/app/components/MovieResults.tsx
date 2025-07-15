@@ -1,4 +1,4 @@
-import { useSearchMoviesQuery } from '../../api/moviesApi.ts';
+import { useSearchMoviesQuery } from '@/api/moviesApi.ts';
 import MovieCard from './MovieCard.tsx';
 
 const MovieResults = ({ searchTerm }) => {
@@ -13,15 +13,19 @@ const MovieResults = ({ searchTerm }) => {
   if (isLoading) return (<p>Загрузка...</p>);
   if (error) return (<p>Ошибка</p>);
 
+  console.log(data.docs);
+
+  const defaultInfo = 'нет данных';
+
   return (
     <ul className="card-container">
       {data.docs.map((movie) => (
         <li key={movie.id}>
           <MovieCard
             name={movie.name || movie.alternativeName}
-            year={movie.year}
-            poster={movie.poster.url}
-            rating={movie.rating.imdb || 0}
+            year={movie.year || defaultInfo}
+            poster={movie.poster}
+            rating={movie.rating.imdb || defaultInfo}
           />
         </li>
       ))}
