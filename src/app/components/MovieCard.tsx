@@ -2,7 +2,6 @@ import { CalendarClock, Star, FolderPen } from 'lucide-react';
 import noImage from '@/assets/no-image.png';
 
 const MovieCard = ({ name, year, rating, poster }) => {
-  console.log('вот', poster.url);
   const hasPoster = poster.url || poster.previewUrl;
 
   return (
