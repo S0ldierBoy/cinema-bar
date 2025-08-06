@@ -1,21 +1,19 @@
-import { useState } from 'react';
-import useMoviesSearch from '@/app/hooks/useMoviesSearch.ts';
 import MovieSearchInput from '@/app/components/MovieSearchInput.tsx';
 import MovieResult from '@/app/components/MovieResults.tsx';
 import Loader from '@/app/features/Loader.jsx';
+import { useLazySearchMoviesQuery } from '@/api/moviesApi.ts';
 
 const MainPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const { data, isLoading, error, movies, hasNoResults, isError, isFetching } = useMoviesSearch(searchTerm);
+  const [trigger, { data, isFetching, error }] = useLazySearchMoviesQuery();
 
   return (
     <>
       <section>
-        <MovieSearchInput onSearch={setSearchTerm} />
+        <MovieSearchInput onSearch={trigger} />
       </section>
       {isFetching && <Loader />}
       <section>
-        <MovieResult movies={movies} hasNoResults={hasNoResults} />
+        <MovieResult data={data} />
       </section>
     </>
   );

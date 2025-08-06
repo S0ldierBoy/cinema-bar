@@ -19,4 +19,4 @@ export const moviesApi = createApi({
   }),
 });
 
-export const { useSearchMoviesQuery } = moviesApi;
+export const { useSearchMoviesQuery, useLazySearchMoviesQuery } = moviesApi;

@@ -7,22 +7,22 @@ const MovieSearchInput = ({ onSearch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!movName.trim()) return;
-    onSearch(movName);
+    onSearch({ query: movName });
     setMovName('');
   };
 
   return (
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={movName}
-          onChange={(e) => setMovName(e.target.value)}
-          placeholder="  Введите название фильма"
-        />
-        <button type="submit" className="form-btn">
-          <Search size={'16px'} color={'red'} />
-        </button>
-      </form>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={movName}
+        onChange={(e) => setMovName(e.target.value)}
+        placeholder="  Введите название фильма"
+      />
+      <button type="submit" className="form-btn">
+        <Search size={'16px'} color={'red'} />
+      </button>
+    </form>
 
   );
 };
