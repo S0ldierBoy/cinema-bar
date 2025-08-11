@@ -10,10 +10,11 @@ const Loader = () => {
 
 const StyledWrapper = styled.div`
   .loader {
-    position: relative;
-    width: 300px;
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
     height: 3px;
-    background: linear-gradient(to right, transparent, #28AE60, transparent);
+    background: linear-gradient(to right, transparent, #ff0000, transparent);
     overflow: hidden;
   }
 

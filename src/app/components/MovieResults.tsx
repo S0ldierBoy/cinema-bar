@@ -1,6 +1,5 @@
 import MovieCard from './MovieCard.tsx';
 
-
 const MovieResults = ({ data }) => {
   const defaultInfo = 'нет данных';
 

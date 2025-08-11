@@ -7,8 +7,7 @@ const MovieSearchInput = ({ onSearch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!movName.trim()) return;
-    onSearch({ query: movName });
-    setMovName('');
+    onSearch(movName);
   };
 
   return (

@@ -8,10 +8,10 @@ const MainPage = () => {
 
   return (
     <>
-      <section>
-        <MovieSearchInput onSearch={trigger} />
-      </section>
       {isFetching && <Loader />}
+      <section>
+        <MovieSearchInput onSearch={(name: string) => trigger({ query: name })} />
+      </section>
       <section>
         <MovieResult data={data} />
       </section>
