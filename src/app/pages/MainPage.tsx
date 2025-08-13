@@ -10,7 +10,7 @@ const MainPage = () => {
     <>
       {isFetching && <Loader />}
       <section>
-        <MovieSearchInput onSearch={(name: string) => trigger({ query: name })} />
+        <MovieSearchInput isFetching={isFetching} onSearch={(name: string) => trigger({ query: name })} />
       </section>
       <section>
         <MovieResult data={data} />
