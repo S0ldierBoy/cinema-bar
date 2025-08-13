@@ -3,7 +3,7 @@ import MovieCard from './MovieCard.tsx';
 const MovieResults = ({ data }) => {
   const defaultInfo = 'нет данных';
 
-  if (!data || !Array.isArray(data.docs)) {
+  if (!data || !Array.isArray(data.docs) || data.docs.length === 0) {
     return null;
   }
 
@@ -12,10 +12,10 @@ const MovieResults = ({ data }) => {
       {data?.docs?.map((movie) => (
         <li key={movie.id}>
           <MovieCard
-            name={movie.name ?? movie.alternativeName ?? defaultInfo}
-            year={movie.year || defaultInfo}
+            name={movie?.name ?? movie?.alternativeName ?? defaultInfo}
+            year={movie?.year || defaultInfo}
             poster={movie.poster}
-            rating={movie.rating.imdb || defaultInfo}
+            rating={movie?.rating.imdb || defaultInfo}
           />
         </li>
       ))}
