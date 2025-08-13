@@ -1,4 +1,4 @@
-@import "../node_modules/tailwindcss";
+@import '../node_modules/tailwindcss';
 
 @tailwind base;
 @tailwind utilities;
@@ -129,7 +129,7 @@ span {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
 }
 
 .movie-buttons {
@@ -211,16 +211,13 @@ input:focus::placeholder {
 }
 
 @media (min-width: 1024px) {
-
   .form-btn {
     flex: 0 0 60px;
   }
 }
 
 @media (min-width: 1200px) {
-
   .form-btn {
     flex: 0 0 80px;
   }
 }
-

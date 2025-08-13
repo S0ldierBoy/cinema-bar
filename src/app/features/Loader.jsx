@@ -1,37 +1,25 @@
-import styled from 'styled-components';
-
 const Loader = () => {
   return (
-    <StyledWrapper>
-      <div className="loader" />
-    </StyledWrapper>
+    <>
+      <style>
+        {`
+          @keyframes slide {
+            0%   { transform: translateX(-300px); }
+            100% { transform: translateX(1300px); }
+          }
+        `}
+      </style>
+
+      <div className="fixed inset-x-0 mx-auto w-full max-w-[1300px] h-[3px] overflow-hidden ">
+        <div className="relative w-full h-full bg-gradient-to-r from-transparent via-green-500 to-transparent">
+          <div
+            className="absolute top-0 left-0 w-[200px] h-full bg-gradient-to-r from-transparent via-black to-transparent"
+            style={{ animation: 'slide 1s linear infinite' }}
+          ></div>
+        </div>
+      </div>
+    </>
   );
 };
-
-const StyledWrapper = styled.div`
-  .loader {
-    position: fixed;
-    width: 100%;
-    max-width: 1200px;
-    height: 3px;
-    background: linear-gradient(to right, transparent, #ff0000, transparent);
-    overflow: hidden;
-  }
-
-  .loader::after {
-    content: '';
-    position: absolute;
-    translate: -200px 0;
-    max-width: 1200px;
-    height: 100%;
-    background: linear-gradient(to right, transparent, #212121, transparent);
-    animation: slide 1s infinite;
-  }
-
-  @keyframes slide {
-    100% {
-      translate: 300px 0;
-    }
-  }`;
 
 export default Loader;

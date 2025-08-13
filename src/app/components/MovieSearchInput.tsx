@@ -11,8 +11,6 @@ const MovieSearchInput = ({ onSearch, isFetching }) => {
     setMovName('');
   };
 
-  console.log(isFetching);
-
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -22,13 +20,16 @@ const MovieSearchInput = ({ onSearch, isFetching }) => {
         placeholder="  Введите название фильма"
         autoFocus
       />
-      <button type="submit" className="form-btn" disabled={isFetching} aria-busy={isFetching}>
+      <button
+        type="submit"
+        className="form-btn"
+        disabled={isFetching}
+        aria-busy={isFetching}
+      >
         <Search size={'16px'} color={` ${isFetching ? 'gray' : 'red'}`} />
       </button>
     </form>
-
   );
 };
 
 export default MovieSearchInput;
-

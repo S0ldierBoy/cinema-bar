@@ -9,14 +9,8 @@ const MovieCard = ({ name, year, rating, poster }) => {
       <picture>
         {hasPoster && (
           <>
-            <source
-              media="(min-width: 429px)"
-              srcSet={poster.previewUrl}
-            />
-            <source
-              media="(max-width: 428px)"
-              srcSet={poster.url}
-            />
+            <source media="(min-width: 429px)" srcSet={poster.previewUrl} />
+            <source media="(max-width: 428px)" srcSet={poster.url} />
           </>
         )}
         <img
@@ -32,18 +26,23 @@ const MovieCard = ({ name, year, rating, poster }) => {
           <span>{name}</span>
         </h2>
         <p className="movie-info-line">
-          <CalendarClock size={16} color={'red'} />{year}
+          <CalendarClock size={16} color={'red'} />
+          {year}
         </p>
         <p className="movie-info-line">
-          <Star size={16} color={'red'} />{rating}
+          <Star size={16} color={'red'} />
+          {rating}
         </p>
       </div>
       <div className="movie-buttons">
-        <button type="button" className="movie-card-btn">Подробнее</button>
-        <button type="button" className="movie-card-btn">Сохранить</button>
+        <button type="button" className="movie-card-btn">
+          Подробнее
+        </button>
+        <button type="button" className="movie-card-btn">
+          Сохранить
+        </button>
       </div>
     </article>
-
   );
 };
 
