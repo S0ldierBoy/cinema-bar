@@ -1,37 +1,36 @@
 import { CalendarClock, Star, FolderPen } from 'lucide-react';
 import noImage from '@/assets/no-image.png';
 
-const MovieCard = ({ name, year, rating, poster }) => {
-  const hasPoster = poster?.url || poster?.previewUrl;
+const MovieCard = ({ name, alternativeName, year, rating, poster }) => {
+  const defaultInfo = 'нет данных';
+
+  const posterLarge = poster?.previewUrl || noImage;
+  const posterSmall = poster?.url || noImage;
+
+  const displayName = name || alternativeName || defaultInfo;
+  const displayYear = year || defaultInfo;
+  const displayRating = rating?.imdb || defaultInfo;
 
   return (
     <article className="movie-card">
       <picture>
-        {hasPoster && (
-          <>
-            <source media="(min-width: 429px)" srcSet={poster.previewUrl} />
-            <source media="(max-width: 428px)" srcSet={poster.url} />
-          </>
-        )}
-        <img
-          src={hasPoster ? poster.url : noImage}
-          alt={name || 'Постер'}
-          loading="lazy"
-        />
+        <source media="(min-width: 429px)" srcSet={posterLarge} />
+        <source media="(max-width: 428px)" srcSet={posterSmall} />
+        <img src={posterSmall} alt={displayName} loading="lazy" />
       </picture>
 
       <div className="movie-info">
         <h2 className="movie-title">
           <FolderPen size={16} color={'red'} />
-          <span>{name}</span>
+          <span>{displayName}</span>
         </h2>
         <p className="movie-info-line">
           <CalendarClock size={16} color={'red'} />
-          {year}
+          {displayYear}
         </p>
         <p className="movie-info-line">
           <Star size={16} color={'red'} />
-          {rating}
+          {displayRating}
         </p>
       </div>
       <div className="movie-buttons">
