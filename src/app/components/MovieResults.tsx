@@ -7,8 +7,8 @@ const MovieResults = ({ data }) => {
 
   return (
     <ul className="card-container">
-      {data?.docs?.map((movie) => (
-        <li key={movie.id}>
+      {data?.docs?.map((movie, index) => (
+        <li key={movie?.id || `movie-${index}`}>
           <MovieCard {...movie} />
         </li>
       ))}
