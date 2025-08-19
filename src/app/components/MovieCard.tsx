@@ -1,7 +1,8 @@
 import { CalendarClock, Star, FolderPen } from 'lucide-react';
 import noImage from '@/assets/no-image.png';
 
-const MovieCard = ({ name, alternativeName, year, rating, poster }) => {
+const MovieCard = ({ movie, onOpen }) => {
+  const { name, alternativeName, year, rating, poster } = movie;
   const defaultInfo = 'нет данных';
 
   const posterLarge = poster?.previewUrl || noImage;
@@ -34,7 +35,11 @@ const MovieCard = ({ name, alternativeName, year, rating, poster }) => {
         </p>
       </div>
       <div className="movie-buttons">
-        <button type="button" className="movie-card-btn">
+        <button
+          onClick={() => onOpen(movie)}
+          type="button"
+          className="movie-card-btn"
+        >
           Подробнее
         </button>
         <button type="button" className="movie-card-btn">
