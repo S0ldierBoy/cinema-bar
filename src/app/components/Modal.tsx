@@ -38,15 +38,14 @@ const Modal = ({ onClose, movie }) => {
           >
             Закрыть
           </button>
-          <button className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-500 transition">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://www.kinopoisk.ru/film/${movieId}`}
-            >
-              Больше информации
-            </a>
-          </button>
+          <a
+            className="inline-block px-4 py-2 rounded-lg bg-red-600 hover:bg-red-500 transition text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`https://www.kinopoisk.ru/film/${movieId}`}
+          >
+            Больше информации
+          </a>
         </div>
       </div>
     </div>
