@@ -9,21 +9,23 @@ import Modal from '@/app/components/Modal.tsx';
 const MainPage = () => {
   const [trigger, { data, isFetching, error }] = useLazySearchMoviesQuery();
   const isEmpty = data?.docs.length === 0;
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalMovie, setModalMovie] = useState({});
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // контроль открытия
+  const [selectedMovie, setSelectedModalMovie] = useState(null); //  фильм в state
 
   useMovieSearchToasts({ isFetching, error, isEmpty });
 
   const onOpen = (movie) => {
+    // открываем модалку и запоминаем выбранный фильм
     setIsModalOpen(true);
-    setModalMovie(movie);
+    setSelectedModalMovie(movie);
   };
 
   return (
     <>
       {isFetching && <Loader />}
       {isModalOpen && (
-        <Modal onClose={() => setIsModalOpen(false)} movie={modalMovie} />
+        <Modal onClose={() => setIsModalOpen(false)} movie={selectedMovie} />
       )}
       <section>
         <MovieSearchInput

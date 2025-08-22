@@ -1,16 +1,9 @@
 import { CalendarClock, Star, FolderPen } from 'lucide-react';
-import noImage from '@/assets/no-image.png';
+import getMovieDisplayData from '@/app/utils/getMovieDisplayData';
 
 const MovieCard = ({ movie, onOpen }) => {
-  const { name, alternativeName, year, rating, poster } = movie;
-  const defaultInfo = 'нет данных';
-
-  const posterLarge = poster?.previewUrl || noImage;
-  const posterSmall = poster?.url || noImage;
-
-  const displayName = name || alternativeName || defaultInfo;
-  const displayYear = year || defaultInfo;
-  const displayRating = rating?.imdb || defaultInfo;
+  const { posterLarge, posterSmall, displayName, displayYear, displayRating } =
+    getMovieDisplayData(movie);
 
   return (
     <article className="movie-card">
