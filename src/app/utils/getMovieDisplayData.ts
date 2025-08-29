@@ -4,13 +4,14 @@ const DEFAULT_INFO = 'нет данных';
 const getMovieDisplayData = (movie) => {
   const isMovieSeries = (movie) => {
     return movie?.isSeries === true
-      ? 'сериал'
+      ? 'Сериал'
       : movie?.isSeries === false
-        ? 'фильм'
+        ? 'Фильм'
         : DEFAULT_INFO;
   };
 
   return {
+    movieLength: movie?.movieLength ?? DEFAULT_INFO,
     movieId: movie?.id ?? 0,
     posterLarge: movie?.poster?.url ?? noImage,
     posterSmall: movie?.poster?.previewUrl ?? noImage,
